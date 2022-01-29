@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import FeedbackList from './components/FeedbackList/FeedbackList';
+import React, { useState } from 'react';
+import Form from './components/Form/Form';
+import { v4 as uuidv4 } from 'uuid';
+import FeedbackInfo from './components/FeedbackInfo/FeedbackInfo';
+import { ContextProvider } from './components/Context/Context';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<ContextProvider>
+			<div className="App">
+				<Form />
+				<FeedbackInfo />
+				<FeedbackList />
+			</div>
+		</ContextProvider>
+	);
 }
 
 export default App;
